@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { Button, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { useFonts, Roboto_400Regular } from '@expo-google-fonts/roboto';
+import { Container } from './src/components/Container/Container';
 
 export default function App() {
   let [fontsLoaded, fontError] = useFonts({
@@ -12,7 +13,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <Container>
       <StatusBar style="auto" />
       
       <Image source={require('./src/assets/logo.png')} />
@@ -33,19 +34,11 @@ export default function App() {
         </Text>
       </TouchableOpacity>
       <Image style={styles.bolinha1} source={require('./src/assets/bolinhas01.png')} />
-    </View>
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: 40,
-    gap: 30
-  },
   lable: {
     fontFamily: 'Roboto_400Regular'
   },
@@ -93,7 +86,7 @@ const styles = StyleSheet.create({
   },
   bolinha1: {
     position: 'absolute',
-    top: '20%',
+    top: '5%',
     right: '40%'
   }
 });
